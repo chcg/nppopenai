@@ -116,7 +116,7 @@ DEPENDENT_LIBS = {
                 ]
             },
             'msvc': {
-                'result':   ['include/libssh/libssh.h', 'lib/libcurl.lib'],
+                'result':   ['lib/libcurl.lib'],
                 'commands': [
                     'cmake -G "NMake Makefiles" -DBUILD_CURL_EXE=OFF -DBUILD_SHARED_LIBS=OFF -DWITH_EXAMPLES=OFF -DWITH_SERVER=OFF -DCMAKE_BUILD_TYPE=Release \
                         "-DCMAKE_C_FLAGS_RELEASE=/MP /MT /O2 /Ob2 /D NDEBUG" "-DCMAKE_CXX_FLAGS_RELEASE=/MP /MT /O2 /Ob2 /D NDEBUG" \
@@ -126,7 +126,7 @@ DEPENDENT_LIBS = {
                 ]
             },
             'msvc_x64': {
-                'result':   ['include/libssh/libssh.h', 'lib/libcurl.lib'],
+                'result':   ['lib/libcurl.lib'],
                 'commands': [
                     'cmake -G "NMake Makefiles" -DBUILD_CURL_EXE=OFF -DBUILD_SHARED_LIBS=OFF -DWITH_EXAMPLES=OFF -DWITH_SERVER=OFF -DCMAKE_BUILD_TYPE=Release \
                         "-DCMAKE_C_FLAGS_RELEASE=/MP /MT /O2 /Ob2 /D NDEBUG" "-DCMAKE_CXX_FLAGS_RELEASE=/MP /MT /O2 /Ob2 /D NDEBUG" \
