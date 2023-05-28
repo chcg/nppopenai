@@ -1,0 +1,27 @@
+name: CI_build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        build_platform: [msvc_x64, msvc]
+        
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1
+
+    - name: Add nmake
+      uses: ilammy/msvc-dev-cmd@v1
+
+    - name: MSBuild of plugin dll
+      working-directory: .\
+      run: python3 build_3rdparty.py  vs.proj "${{ matrix.build_platform }}"
+
